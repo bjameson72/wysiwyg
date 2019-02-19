@@ -2,8 +2,7 @@
 import toggleActive from "./toggleActive.js";
 
 // select edit buttons
-const editButtons = document.querySelectorAll(".edit-button");
+const editButtons = document.querySelectorAll(".edit-button, .save-button");
 
 // add event listener
 editButtons.forEach(button => button.addEventListener("click", toggleActive));
-
