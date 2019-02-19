@@ -1,12 +1,5 @@
-// select edit buttons
-const editButtons = document.querySelectorAll('.edit-button');
-// add event listener (click) to each button
-editButtons.forEach(button => button.addEventListener('click', toggleActive));
+import toggleActive from './toggleActive.js';
 
-// function that adds a class to editable-text
-function toggleActive(event) {
-  // get the parent element
-  const editableText = event.target.parentElement;
-  // toggle the class active
-  editableText.classList.toggle('active');
-}
+// select edit buttons
+// add event listener (click) to each button
+document.querySelectorAll('.edit-button').forEach(button => button.addEventListener('click', toggleActive));
