@@ -52,6 +52,8 @@
 }
 
 .editable-text:hover .edit-button,
-.editable-text.active .edit-button {
+.editable-text.active .edit-button,
+.editable-text.hover .save-button,
+.editable-text.active .save-button {
   opacity: 1;
 }
