@@ -42,18 +42,15 @@
   display: none;
 }
 
-.save-button {
-  display: none;
-  opacity: 1;
-}
-
 .editable-text.active .save-button {
   display: inline-block;
 }
 
 .editable-text:hover .edit-button,
-.editable-text.active .edit-button,
-.editable-text.hover .save-button,
 .editable-text.active .save-button {
   opacity: 1;
+}
+
+.editable-text.active .edit-button {
+  display: none;
 }
