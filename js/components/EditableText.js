@@ -6,6 +6,18 @@ export default class EditableText extends HTMLElement {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  get active() {
+    return this.hasAttribute("active");
+  }
+
+  set active(isActive) {
+    if (isActive) {
+      this.setAttribute("active", "");
+    } else {
+      this.removeAttribute("active");
+    }
+  }
+
   connectedCallback() {
     this.render();
   }
@@ -16,7 +28,7 @@ export default class EditableText extends HTMLElement {
         <button type="button" class="save-button">Save</button>
         <p class="text-element">Go ahead, edit me however you want!</p>
 
-        <wysiwyg-editor></wysiwyg-editor>
+        <wysiwyg-editor type="paragraph"></wysiwyg-editor>
         `;
 
     // select edit buttons
@@ -34,10 +46,17 @@ export default class EditableText extends HTMLElement {
 
   toggleActive() {
     // toggle the class active
-    this.classList.toggle("active");
+    // this.classList.toggle("active"); // not good to change class
+    // this.setAttribute('active', '');
+    // if (this.hasAttribute("active")) {
+    //   this.removeAttribute("active");
+    // } else {
+    //   this.setAttribute("active", "");
+    // }
+    this.active = !this.active;
   }
 
-  handleEditorInput(event) {
+  handleInput(event) {
     const textElement = this.querySelector(".text-element");
     if (event.target.type === "text" || event.target.tagName === "TEXTAREA") {
       const text = event.target.value;

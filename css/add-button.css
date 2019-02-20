@@ -1,11 +1,17 @@
-#add-button {
+#buttons {
   position: absolute;
+  display: flex;
+  align-content: center;
+  width: 100%;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
   padding: 0.25rem 0;
   transform: translateY(100%);
+}
+
+.add-button {
+  width: 50%;
   z-index: 0;
   font-size: 1.2rem;
   background-color: #eff1f3;
@@ -16,7 +22,7 @@
   transition: all 350ms;
 }
 
-#add-button:hover {
+.add-button:hover {
   background-color: hsl(208, 70%, 80%);
   opacity: 0.9;
 }
